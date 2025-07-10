@@ -53,6 +53,34 @@ Use this to open the Studio UI:
 - 📚 API Docs: http://127.0.0.1:2024/docs
 ```
 
+### Using Azure OpenAI
+
+If you are working with Azure OpenAI deployments, set the following environment
+variables in your `.env` file:
+
+- `OPENAI_API_KEY` – your Azure OpenAI key
+- `OPENAI_API_BASE` – base URL of the Azure resource (e.g.
+  `https://my-resource.openai.azure.com`)
+- `OPENAI_API_VERSION` – API version such as `2024-02-15-preview`
+- `OPENAI_API_TYPE=azure`
+
+Example configuration:
+
+```bash
+OPENAI_API_KEY=sk-xxx
+OPENAI_API_BASE=https://my-resource.openai.azure.com
+OPENAI_API_VERSION=2024-02-15-preview
+OPENAI_API_TYPE=azure
+
+SUPERVISOR_MODEL=openai:supervisor-deployment
+RESEARCHER_MODEL=openai:researcher-deployment
+PLANNER_MODEL=openai:planner-deployment
+WRITER_MODEL=openai:writer-deployment
+```
+
+Use the `openai:<deployment>` format to reference the Azure deployment name for
+each model.
+
 #### Multi-agent
 
 (1) Chat with the agent about your topic of interest, and it will initiate report generation:
